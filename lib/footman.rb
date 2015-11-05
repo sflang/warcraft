@@ -9,7 +9,11 @@ class Footman < Unit
   end
 
   def attack!(enemy)
-    enemy.damage(10)
+    if enemy.class.is_a? Barracks
+      enemy.damage(5)
+    else
+      enemy.damage(10)
+    end
   end
 
   # def damage(points)
